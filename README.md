@@ -1,5 +1,6 @@
 
 # XOX
+This is a classic XOX game
 
 
 # Gameplay
