@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<TileController> listTileController;
     [SerializeField] Canvas canvas;
 
+    public bool isGameOver = false;
+
     void Awake() 
     {
         instance = this;   

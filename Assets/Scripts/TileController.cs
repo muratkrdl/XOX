@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public enum TileState
 {
@@ -38,10 +39,10 @@ public class TileController : MonoBehaviour, IPointerDownHandler
 
     public Vector2 coordinate;
 
-
     public void OnPointerDown(PointerEventData eventData)
     {
         if(MyState != TileState.None) { return; }
+        if(GameManager.instance.isGameOver) { return; }
 
         var state = GameManager.instance.turn % 2 == 0 ? TileState.X : TileState.O;
         SetState(state);
@@ -51,7 +52,14 @@ public class TileController : MonoBehaviour, IPointerDownHandler
         if(result.Item1)
         {
             Debug.Log($"Winner is: {result.Item2}");
+            Invoke("ResetGame",2);
+            GameManager.instance.isGameOver = true;
         }
+    }
+
+    void ResetGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void SetState(TileState state)
