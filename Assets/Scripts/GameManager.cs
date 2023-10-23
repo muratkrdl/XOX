@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -13,11 +14,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<TileController> listTileController;
     [SerializeField] Canvas canvas;
 
+    [SerializeField] TextMeshProUGUI winnerText;
+
     public bool isGameOver = false;
 
     void Awake() 
     {
-        instance = this;   
+        instance = this;
+        winnerText.gameObject.SetActive(false);
     }
 
     public (bool, TileState) HasWinner()
@@ -42,6 +46,12 @@ public class GameManager : MonoBehaviour
         }
 
         return (false, TileState.None);
+    }
+
+    public void ShowWinnerText(TileState item)
+    {
+        winnerText.text = $"Winner is: {item}";
+        winnerText.gameObject.SetActive(true);
     }
 
 }

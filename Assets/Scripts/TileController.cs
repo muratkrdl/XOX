@@ -51,7 +51,8 @@ public class TileController : MonoBehaviour, IPointerDownHandler
         var result = GameManager.instance.HasWinner();
         if(result.Item1)
         {
-            Debug.Log($"Winner is: {result.Item2}");
+            //Debug.Log($"Winner is: {result.Item2}");
+            GameManager.instance.ShowWinnerText(result.Item2);
             Invoke("ResetGame",2);
             GameManager.instance.isGameOver = true;
         }
