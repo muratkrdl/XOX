@@ -1,5 +1,6 @@
 
 # XOX
+
 This is a classic XOX game
 
 
@@ -10,6 +11,7 @@ This is a classic XOX game
 <img src="https://github.com/muratkrdl/XOX/blob/main/Winner%20O.gif" width="auto">
 
 <img src="https://github.com/muratkrdl/XOX/blob/main/Winner%20X.gif" width="auto">
+
 
 ## Authors
 
