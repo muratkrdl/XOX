@@ -7,6 +7,7 @@ First Player is X
 Second Player is O
 
 The first player clicks on any tile and the tile first player clicks becomes X and the second player clicks on any tile and the tile second player clicks becomes O
+
 The player who places the symbol horizontally or vertically wins.
 
 
